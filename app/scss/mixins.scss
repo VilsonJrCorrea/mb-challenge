@@ -1,0 +1,88 @@
+@mixin title(){
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: left;
+    color:#000000;
+}
+
+@mixin baseButton{
+    border-radius: 3px;
+    border: none;
+    font-size: 14px;
+    height: 30px;
+    margin-top: 20px;
+    outline: none;
+    width: 100%;
+    &:hover {
+      cursor: pointer;
+    }
+}
+
+@mixin continueButton(){
+    @include baseButton;
+    background-color: #ff9900;
+    color: white;
+    width: 155px;
+    &:hover {
+      color: black;
+      background-color: #ff9900de;
+    }
+}
+
+@mixin backButton(){
+    @include baseButton;
+    background-color: white;
+    border:solid 2px #ff9900de;
+    width: 120px;
+    &:hover {
+      color: white;
+      background-color: #ff9900de;
+    }
+}
+
+@mixin buttonsContainer(){
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+@mixin formStep(){
+    width: 300px;
+    height: 500px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin inputText(){
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+    color: #292929;
+
+    .label{
+        width: 100%;
+        display: flex;
+        margin-bottom: 5px;
+        &.error{
+            color: #ff0000;
+        }
+    }
+    .text{
+        border-radius: 5px;
+        border: 2px solid #818181; 
+        height: 30px;
+        outline: none;
+        font-size: 1rem;
+        &.error{
+            border: 2px solid #ff0000;
+        }
+    }
+}
+
+@mixin spanError{
+    color: #ff0000;
+    font-size: 15px;
+    margin-top: 5px;
+}
